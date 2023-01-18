@@ -9,4 +9,12 @@ class SilabosControlador{
         
         return $respuesta;
     }
+    static public function ctrListarSilabos(){
+    
+        $silabos = SilabosModelo::mdlListarSilabos();
+    
+        return $silabos;
+    
+    }
+
 }

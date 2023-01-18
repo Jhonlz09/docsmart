@@ -25,15 +25,19 @@
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <table id="tbl" class="table table-bordered table-striped">
+                        <table id="tblSilabos" class="table table-bordered table-striped w-100">
                             <thead>
                                 <tr>
                                     <th>ID</th>
+                                    <th>ID_MATERIA</th>
                                     <th>MATERIA</th>
+                                    <th>ID_PROFESOR</th>
                                     <th>PROFESOR</th>
+                                    <th>ID_PERIODO</th>
                                     <th>PERIODO</th>
+                                    <th>ID_HORARIO</th>
                                     <th>HORARIO</th>
-                                    <th>MICRO</th>
+                                    <th class="text-center">SILABO</th>
                                     <th class="text-center">ACCIONES</th>
                                 </tr>
                             </thead>

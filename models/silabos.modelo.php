@@ -88,4 +88,18 @@ class SilabosModelo{
 
         return $stmt->fetch();
     }
+    static public function mdlListarSilabos(){
+    
+        $stmt = Conexion::ConexionDB()->prepare("SELECT a.id_asignacion, a.id_micro, p.id_profesor,p.nombres_profesor, p.apellidos_profesor, h.id_horario, h.horario,
+                                                    pe.id_periodo,pe.semestre_modulo,m.id_materia,m.nombre_materia
+                                                    FROM public.tblasignar a 
+                                                    JOIN public.tblprofesor p ON a.id_profesor=p.id_profesor
+                                                    JOIN public.tblhorario h ON a.id_horario = h.id_horario 
+                                                    JOIN public.tblperiodo pe ON a.id_periodo = pe.id_periodo
+                                                    JOIN public.tblmaterias m ON a.id_materia = m.id_materia WHERE a.estado_asignacion='A' ORDER BY a.id_asignacion");
+    
+        $stmt->execute();
+    
+        return $stmt->fetchAll();
+    }
 }
