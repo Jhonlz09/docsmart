@@ -1,0 +1,272 @@
+
+
+@font-face {
+    font-family: ReemKufi-Regular;
+    src: url("fuentes/Reem/ReemKufi-Regular.ttf");
+}
+
+@font-face {
+    font-family: ReemKufi-Medium;
+    src: url("fuentes/Reem/ReemKufi-Medium.ttf");
+}
+
+@font-face {
+  font-family: ReemKufi-Bold;
+  src: url("fuentes/Reem/ReemKufi-Bold.ttf");
+}
+
+@font-face {
+  font-family: ReemKufi-SemiBold;
+  src: url("fuentes/Reem/ReemKufi-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: PlusJakartaSans-Regular;
+    src: url("fuentes/PlusJakarta/PlusJakartaSans-Regular.ttf");
+}
+
+@font-face {
+    font-family: PlusJakartaSans-Medium;
+    src: url("fuentes/PlusJakarta/PlusJakartaSans-Medium.ttf");
+}
+
+@font-face {
+  font-family: PlusJakartaSans-Bold;
+  src: url("fuentes/PlusJakarta/PlusJakartaSans-Bold.ttf");
+}
+
+@font-face {
+  font-family: PlusJakartaSans-SemiBold;
+  src: url("fuentes/PlusJakarta/PlusJakartaSans-SemiBold.ttf");
+}
+
+
+p {
+  font-family: PlusJakartaSans-SemiBold; 
+}
+.page-item.active .page-link {
+  background: linear-gradient(to bottom, #ed1d1d 0%, #850000 100%) !important;
+  color: white !important;
+}
+.page-link:hover {
+  background: linear-gradient(to bottom, #585858 0%, #111 100%) !important;
+  color: #fff !important;
+  border-color: #3e4348;
+}
+
+.page-link {
+  color: #707070 !important ;
+}
+
+.page-link:focus {
+  box-shadow: none !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+  color: white !important;
+}
+td {
+  font-size: 1.08rem;
+}
+.btn-warning.focus,
+.btn-warning:focus {
+  background-color: #ffc107 !important;
+}
+
+.brand-link {
+  font-size: 1.01rem !important;
+  line-height: 1.8 !important;
+}
+
+.card-title {
+  font-size: 1.15rem !important;
+  font-weight: 600 !important;
+}
+
+body:not(.layout-fixed) .main-sidebar {
+  position: fixed !important;
+}
+
+#btnEliminar1 {
+  background-color: #df5c0f !important;
+  border-color: #db6918 !important;
+  color: #ffffff !important;
+}
+
+.btn-dark {
+  background-color: rgb(0 0 0 / 84%) !important;
+  border-color: #343a40 !important;
+  padding-top:  0.5em;
+  padding-bottom: 0.4rem;
+  font-size: 1rem;
+
+}
+
+.btn-dark i{
+  font-size: 1.1rem;
+}
+.btn-dark:hover {
+  background-color: rgb(28 34 44) !important;
+  border-color: #131a22 !important
+}
+#darkbutton {
+  background-color: #343a40 !important;
+  border-color: #343a40 !important;
+  color: #ffffff !important;
+}
+
+table.dataTable tbody > tr.selected,
+table.dataTable tbody > tr > .selected {
+  background-color: #d42828 !important;
+}
+table.dataTable tbody tr.selected,
+table.dataTable tbody th.selected,
+table.dataTable tbody td.selected {
+  color: rgb(255, 255, 255) !important;
+}
+
+form .form-row-nuevo .input-data {
+  width: 100%;
+  height: 40px;
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+input:focus-visible {
+  outline: none;
+}
+.input-data input {
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  border-bottom: 2px solid #e6fff1d1;
+  color: aliceblue;
+}
+
+.input-data .label {
+  position: absolute;
+  bottom: 1px;
+  color: #f6fffa;
+  font-size: 22px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  font-weight: 500 !important;
+}
+.input-data input:focus ~ .label,
+.input-data input:valid ~ .label {
+  transform: translateY(-25px);
+  color: #2bbf4d;
+  font-size: 18px;
+  font-weight: 600 !important;
+}
+
+.input-data .labele {
+  position: absolute;
+  bottom: 1px;
+  color: #f6fffa;
+  font-size: 22px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  font-weight: 500 !important;
+}
+.input-data input:focus ~ .labele,
+.input-data input:valid ~ .labele {
+  transform: translateY(-25px);
+  color: #ffc107;
+  font-size: 18px;
+  font-weight: 600 !important;
+}
+
+.header-color-nuevo {
+  background-color: #28a745a8;
+  backdrop-filter: blur(10px);
+}
+
+.input-data .underline {
+  position: absolute;
+  bottom: 0px;
+  height: 2px;
+  width: 100%;
+}
+.input-data .underline:before,
+.input-data .underline:after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: #2bbf4d;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.4s ease;
+}
+
+.input-data .underedit {
+  position: absolute;
+  bottom: 0px;
+  height: 2px;
+  width: 100%;
+}
+
+.input-data .underedit:before,
+.input-data .underedit:after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: #ffc107;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.4s ease;
+}
+
+.input-data input:focus ~ .underline:before,
+.underline:after,
+.input-data input:valid ~ .underline:before,
+.underline:after {
+  transform: scaleX(1);
+}
+.input-data input:focus ~ .underedit:before,
+.underedit:after,
+.input-data input:valid ~ .underedit:before,
+.underedit:after {
+  transform: scaleX(1);
+}
+
+h4.modal-title.title-nuevo {
+  color: white;
+}
+
+.btn-white {
+  background-color: white;
+  border-color: antiquewhite;
+}
+.btn-white:hover {
+  background-color: #fff9e7;
+  border-color: antiquewhite;
+}
+div#swal2-html-container{
+  color: #e3e3e3;
+  font-size: 18px;
+}
+thead{
+  background: linear-gradient(180deg, rgb(60 67 74) 0%, rgb(0 18 36) 100%);
+  color: white;
+  /* background-color: #343a40f0; */
+}
+
+  input[type=file]::file-selector-button {
+  margin-top: -20px;
+  margin-right: 20px;
+  margin-left: -12px;
+  border: #343a40;
+  z-index: 900;
+  background: #343a40;
+  padding: 10px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  /* transition: background .2s ease-in-out; */
+}
