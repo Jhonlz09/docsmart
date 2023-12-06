@@ -76,7 +76,7 @@
                     // O usando el atributo name del botón
                     if (response === 'success') {
                         // Autenticación exitosa, redireccionar a otra página
-                        window.location.href = "/docusmart/";
+                        window.location.href = "../";
                     } else if (response === 'invalid_password') {
                         validarLogin('Contraseña incorrecta', false);
                     } else {
