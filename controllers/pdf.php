@@ -250,7 +250,7 @@ if ($validacionGrafico == null) {
     $pdf->Cell(0, 20, iconv('UTF-8', 'windows-1252', 'NO SE ENCONTRARON DATOS EN EL RANGO DE FECHAS'), 0, 0, 'C');
 } else {
     // Logo
-    $pdf->Image('../assets/img/logoTesHeader.png', 30, 25, 150);
+    //$pdf->Image('../assets/img/logoTesHeader.png', 30, 25, 150);
     $pdf->Ln(80);
     $pdf->SetFont('Arial', 'B', 22);
     $pdf->Cell(0, 10, 'INFORME DEL ' . $dia_d . ' AL ' . $dia_h . ' DE ' . $mes_h . ' DE ' . $ano_h . '', 0, 0, 'C');
