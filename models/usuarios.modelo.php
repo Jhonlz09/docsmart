@@ -7,7 +7,7 @@ class UsuarioModelo
     static public function mdlMostrarUsuarios()
     {
 
-        $stmt = Conexion::ConexionDB()->prepare("SELECT u.id_usuario, u.nombre_usuario, u.estado_usuario, p.id_perfil,p.descripcion,'' as acciones FROM tblusuario U JOIN tblperfil p ON p.id_perfil=u.id_perfil WHERE u.estado_usuario='A' AND u.id_usuario != 1 order by u.id_usuario;");
+        $stmt = Conexion::ConexionDB()->prepare("SELECT u.id_usuario, u.nombre_usuario, u.estado_usuario, p.id_perfil,p.descripcion,'' as acciones FROM tblusuario u JOIN tblperfil p ON p.id_perfil=u.id_perfil WHERE u.estado_usuario='A' AND u.id_usuario != 1 order by u.id_usuario;");
 
         $stmt->execute();
 
