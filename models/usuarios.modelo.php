@@ -24,29 +24,37 @@ class UsuarioModelo
         return $stmt->fetchAll(PDO::FETCH_CLASS);
     }
 
-    static public function mdlAgregarUsuarios($usuario, $password, $id_perfil)
+   static public function mdlAgregarUsuarios($usuario, $password, $id_perfil)
     {
-        $stmt = Conexion::ConexionDB()->prepare("INSERT INTO tblusuario(nombre_usuario, clave_usuario, id_perfil)
-        VALUES (:nombre_usuario, :password, :id_perfil)
-        RETURNING id_usuario;");
-        $stmt->bindParam(":password", $password, PDO::PARAM_STR);
-        $stmt->bindParam(":nombre_usuario", $usuario, PDO::PARAM_STR);
-        $stmt->bindParam(":id_perfil", $id_perfil, PDO::PARAM_STR);
+        $resultado = "error";
 
+        try {
+            $conexion = Conexion::ConexionDB();
 
-        if ($stmt->execute()) {
-            $usuario_id = $stmt->fetchColumn();
-            // Luego, prepara la consulta para insertar una fila en la tabla de configuración
-            $stmtConf = Conexion::ConexionDB()->prepare("INSERT INTO tblconfiguracion(id_usuario)
-                VALUES (:usuario_id);");
-            $stmtConf->bindParam(":usuario_id", $usuario_id, PDO::PARAM_INT);
+            $stmt = $conexion->prepare("INSERT INTO tblusuario(nombre_usuario, clave_usuario, id_perfil)
+        VALUES (:nombre_usuario, :password, :id_perfil)");
+            $stmt->bindParam(":password", $password, PDO::PARAM_STR);
+            $stmt->bindParam(":nombre_usuario", $usuario, PDO::PARAM_STR);
+            $stmt->bindParam(":id_perfil", $id_perfil, PDO::PARAM_STR);
 
-            if( $stmtConf->execute() ){
-                $resultado = "ok";
+            if ($stmt->execute()) {
+                $usuario_id = $conexion->lastInsertId();
+
+                $stmtConf = $conexion->prepare("INSERT INTO tblconfiguracion(id_usuario)
+                VALUES (:usuario_id)");
+                $stmtConf->bindParam(":usuario_id", $usuario_id, PDO::PARAM_INT);
+
+                if ($stmtConf->execute()) {
+                    $resultado = "ok";
+                }
+            } else {
+                $resultado = "error";
             }
-        } else {
-            $resultado = "error";
+        } catch (PDOException $e) {
+            // Manejo de errores
+            $resultado = "error: " . $e->getMessage();
         }
+
         return $resultado;
     }
 
