@@ -55,10 +55,6 @@ button:hover {
   background: linear-gradient(180deg, rgba(254, 72, 72, 1) 0%, rgba(168, 6, 6, 1) 100%);
 }
 
-.header-login{
-  position: fixed;
-}
-
 .header {
   display: flex;
   align-items: center;
@@ -75,7 +71,7 @@ button:hover {
 
 .container-login {
   width: 100%;  
-  min-height: 100vh;
+  min-height: calc(100vh - 60px);
   display: -webkit-flex;
   display: flex;
   flex-wrap: wrap;
@@ -264,7 +260,7 @@ button:hover {
 
 @media (max-width: 576px) {
   .wrap-login {
-    padding: 55px;
+    padding: 2em;
   }
 }
 

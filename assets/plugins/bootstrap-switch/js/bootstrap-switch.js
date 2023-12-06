@@ -1,4 +1,4 @@
-/**
+/**style
   * bootstrap-switch - Turn checkboxes and radio buttons into toggle switches.
   *
   * @version v3.3.4
