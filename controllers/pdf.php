@@ -77,7 +77,7 @@ class PDF extends FPDF
         $this->SetY(-15);
         // Arial italic 8
         $this->SetFont('Arial', 'B', 14);
-        $this->Image('../assets/img/logoTesHeader.png', 35, 264, 33);
+       
         $this->SetX(120);
         $this->Cell(10, -20, iconv('UTF-8', 'windows-1252', 'Contraloría Académica - ') . $año);
     }
