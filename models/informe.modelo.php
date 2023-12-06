@@ -112,8 +112,13 @@ class InformeModelo
         $stmt = Conexion::ConexionDB()->prepare("SELECT 
         CASE WHEN a.capel THEN 'CAPEL' ELSE d.direccion END AS direccion,
         GROUP_CONCAT(c.nombre_carrera ORDER BY c.id_carrera SEPARATOR ', ') AS carreras,
-        m.nombre_materia,CONCAT(p.apellidos_profesor, ' ', p.nombres_profesor) AS profesor,
-        pe.semestre_modulo,h.horario,doc.documento,a.id_micro,DATE_FORMAT(a.fecha_entrega, '%d-%m-%Y') AS fecha_entrega
+        m.nombre_materia,
+        CONCAT(p.apellidos_profesor, ' ', p.nombres_profesor) AS profesor,
+        pe.semestre_modulo,
+        h.horario,
+        doc.documento,
+        a.id_micro,
+        DATE_FORMAT(a.fecha_entrega, '%d-%m-%Y') AS fecha_entrega
     FROM tblasignar a
     JOIN tbldoc doc ON a.id_doc = doc.id_doc
     JOIN tblprofesor p ON a.id_profesor = p.id_profesor
@@ -124,10 +129,16 @@ class InformeModelo
     JOIN tblmateria_carrera mc ON m.id_materia = mc.id_materia
     JOIN tblcarrera c ON mc.id_carrera = c.id_carrera
     WHERE a.id_micro = 3 AND YEAR(a.fecha_entrega) = :anio
-    GROUP BY CASE WHEN a.capel THEN 'CAPEL' ELSE d.direccion END,
-        m.nombre_materia,p.apellidos_profesor,p.nombres_profesor,
-        pe.semestre_modulo,h.horario,doc.documento,a.id_micro,
-        DATE_FORMAT(a.fecha_entrega, '%d-%m-%Y')
+    GROUP BY 
+        CASE WHEN a.capel THEN 'CAPEL' ELSE d.direccion END,
+        m.nombre_materia,
+        p.apellidos_profesor,
+        p.nombres_profesor,
+        pe.semestre_modulo,
+        h.horario,
+        doc.documento,
+        a.id_micro,
+        a.fecha_entrega  -- Agrega esta línea para incluir fecha_entrega en GROUP BY
     ORDER BY a.fecha_entrega;");
 
         $stmt->bindParam(":anio", $anio, PDO::PARAM_STR);
